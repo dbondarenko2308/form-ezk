@@ -4,30 +4,7 @@ $(document).ready(function() {
 		minimumResultsForSearch: 1
 	})
 
-	$('.select2-brand').select2({
-		placeholder: 'Бренд*',
-		minimumResultsForSearch: 1
-	})
 
-	$('.select2-type').select2({
-		placeholder: 'Тип оборудования*',
-		minimumResultsForSearch: 1
-	})
-
-	$('.select2-h').select2({
-		placeholder: 'Высота до внешнего блока, м*',
-		minimumResultsForSearch: 1
-	})
-
-	$('.select2-dost').select2({
-		placeholder: 'Доступность внешнего блока*',
-		minimumResultsForSearch: 1
-	})
-
-	$('.select2-work').select2({
-		placeholder: 'Получение разрешения на работы* ',
-		minimumResultsForSearch: 1
-	})
 
 	$('.field input, .field-area textarea').keyup(function() {
 		const label = $(this).parent().find('.field__label')
@@ -163,10 +140,10 @@ $(document).ready(function() {
 			fileInfoBlock.append(`
 							<div class="file-item">
 									${file.name}
-									<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M22.5 7.5L7.5 22.5" stroke="#A1A5AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-										<path d="M7.5 7.5L22.5 22.5" stroke="#A1A5AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-									</svg>
+								<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M37.5 12.5L12.5 37.5" stroke="#1D1D1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M12.5 12.5L37.5 37.5" stroke="#1D1D1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
 							</div>
 					`)
 		}
