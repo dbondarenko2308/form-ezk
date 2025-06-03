@@ -390,7 +390,7 @@ textarea {
 }
 
 .btn-black:active {
-  background: #28ad62;
+  background: #037434;
 }
 
 .btn-green {
@@ -1120,6 +1120,7 @@ input::-webkit-inner-spin-button {
   font-weight: 400;
   font-size: 16px;
   color: #092147;
+  margin-bottom: 10px;
 }
 .field-file__label.show {
   display: block;
@@ -1144,8 +1145,14 @@ input::-webkit-inner-spin-button {
   position: relative;
   z-index: 1;
 }
+.field-file .file-item span {
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .field-file .file-item svg {
   cursor: pointer;
+  flex-shrink: 0;
 }
 .field-file .file-error {
   font-size: 14px;
@@ -1284,4 +1291,8 @@ input[type=number] {
 
 .select2-dropdown {
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.wrapper-content-tech .file-item {
+  color: #000 !important;
 }

@@ -4,8 +4,6 @@ $(document).ready(function() {
 		minimumResultsForSearch: 1
 	})
 
-
-
 	$('.field input, .field-area textarea').keyup(function() {
 		const label = $(this).parent().find('.field__label')
 		const span = $(this).parent().find('.field__error')
@@ -139,7 +137,7 @@ $(document).ready(function() {
 
 			fileInfoBlock.append(`
 							<div class="file-item">
-									${file.name}
+								<span>${file.name}</span>
 								<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M37.5 12.5L12.5 37.5" stroke="#1D1D1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 									<path d="M12.5 12.5L37.5 37.5" stroke="#1D1D1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -178,12 +176,20 @@ $(document).ready(function() {
 		return false
 	})
 
-	const input = document.querySelector('input[type=number]')
+	const inputs = document.querySelectorAll('.inn-input')
 
-	input.addEventListener('input', () => {
-		input.value = input.value.replace(/[^0-9]/g, '')
+	inputs.forEach(input => {
+		input.addEventListener('input', () => {
+			input.value = input.value.replace(/\D/g, '')
+		})
+
+		input.addEventListener('paste', e => {
+			const pasted = e.clipboardData.getData('text')
+			if (!/^\d+$/.test(pasted)) {
+				e.preventDefault()
+			}
+		})
 	})
-
 	$(function() {
 		$('[data-mask="date"]').each(function() {
 			const el = this
@@ -193,14 +199,12 @@ $(document).ready(function() {
 			IMask(el, {
 				mask: Date,
 				min: min,
-				max: max,
+				max: max
 			})
 		})
 	})
 
-
-
-		$('[data-country]').on('change', function() {
+	$('[data-country]').on('change', function() {
 		if ($(this).data('resident') === true) {
 			$(this)
 				.closest('form')
