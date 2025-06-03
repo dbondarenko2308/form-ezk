@@ -955,7 +955,7 @@ input::-webkit-inner-spin-button {
   font-weight: 700;
 }
 .wrapper-content-zayavka .form-content .field-area textarea {
-  height: 118px;
+  height: 136px;
 }
 .wrapper-content-zayavka .form-content__title {
   margin-bottom: 10px;
@@ -985,7 +985,7 @@ input::-webkit-inner-spin-button {
   margin: 170px auto;
 }
 .wrapper-container-quest .field-area textarea {
-  height: 171px;
+  height: 130px;
 }
 .wrapper-container-quest .form-content__title {
   margin-bottom: 35px;
